@@ -7,7 +7,7 @@ export function ButtonPay(){
 
     return(
         <ButtonAndTextareaContainer>
-            <Button onClick={() => {pay(); done()}} disabled={calculateTotalPrice() === 0}>
+            <Button onClick={() => {pay()}} disabled={calculateTotalPrice() === 0}>
                 PAY
             </Button>
         </ButtonAndTextareaContainer>

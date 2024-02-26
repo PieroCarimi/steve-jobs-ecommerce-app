@@ -7,9 +7,15 @@ export const ContainerNavbar = styled.div({
     marginLeft: '50px',
     marginRight: '100px',
     marginBottom:'50px',
-    '@media (max-width: 400px)': {
+    '@media (max-width: 350px)': {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginRight:'25px'
+    },
+    '@media (max-width: 290px)': {
         flexDirection: 'column',
         alignItems: 'center',
+        marginRight:'25px'
     },
 });
 

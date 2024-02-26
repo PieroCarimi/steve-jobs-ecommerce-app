@@ -5,6 +5,8 @@ import {
   ContainerPriceQty,
   DivCart,
 } from "@/styles/styledComponentCard";
+import { StyledLink } from "@/styles/styledComponentNavbar";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useContext } from "react";
 
@@ -14,9 +16,13 @@ export function CardProduct({ product }: any) {
 
     return (
         <ContainerCard>
-            <img src={product.thumbnail}></img>
+            <Link href={`/${product.id}`}>
+                <img src={product.thumbnail} />
+            </Link>
             <ContainerTitleAndDescription>
-                <h4>{product.title}</h4>
+                <StyledLink href={`/${product.id}`}>
+                    <h4>{product.title}</h4>
+                </StyledLink>
                 <p>{product.description}</p>
             </ContainerTitleAndDescription>
             <ContainerPriceQty>

@@ -1,9 +1,9 @@
 import { AppContext } from "@/ContextProvider";
 import {
-  ContainerCard,
-  ContainerTitleAndDescription,
-  ContainerPriceQty,
-  DivCart,
+    ContainerCard,
+    ContainerTitleAndDescription,
+    ContainerPriceQty,
+    DivCart,
 } from "@/styles/styledComponentCard";
 import { StyledLink } from "@/styles/styledComponentNavbar";
 import Link from "next/link";
@@ -30,15 +30,15 @@ export function CardProduct({ product }: any) {
                     <p>Price: {product.price}</p>
                 </div>
                 {router.pathname === "/" ? (
-                <div>
-                    <p>Qty: {product.qty}</p>
-                </div>
+                    <div>
+                        <p>Qty: {product.qty}</p>
+                    </div>
                 ) : router.pathname === "/cart" ? (
-                <div>
-                    <p>Qty: {product.quantity}</p>
-                </div>
+                    <div>
+                        <p>Qty: {product.quantity}</p>
+                    </div>
                 ) : (
-                <p>Error</p>
+                    <p>Error</p>
                 )}
             </ContainerPriceQty>
             {router.pathname === "/" ? (

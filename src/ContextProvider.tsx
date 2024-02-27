@@ -6,10 +6,10 @@ export const AppContext = createContext<TContext>({
   cart: [],
   paid: false,
   products: null,
-  addToCart: () => {},
-  removeFromCart: () => {},
-  pay: () => {},
-  done: () => {},
+  addToCart: () => { },
+  removeFromCart: () => { },
+  pay: () => { },
+  done: () => { },
   getProductQuantity: () => 0,
   loading: false,
   error: "",
@@ -30,12 +30,11 @@ export function ContextProvider({ children }: Props) {
   const addToCart = (idProduct: Product["id"]) => {
     const found = cart.find((el) => el.id === idProduct);
     const foundProduct = products?.find((el) => el.id === idProduct);
-    //if(!!foundProduct && foundProduct.qty > (found?.quantity ?? 0)){
-    if(!!foundProduct && foundProduct.qty > 0){
+    if (!!foundProduct && foundProduct.qty > 0) {
       if (!!found) {
         const newCart = cart.map((el) => {
           if (el.id !== idProduct) return el;
-          return { id: el.id, quantity: el.quantity + 1,  thumbnail: el.thumbnail, title: el.title, description: el.description, price: el.price};
+          return { id: el.id, quantity: el.quantity + 1, thumbnail: el.thumbnail, title: el.title, description: el.description, price: el.price };
         });
         setCart(newCart);
       } else {
@@ -45,11 +44,11 @@ export function ContextProvider({ children }: Props) {
         }
       }
       getProductQuantity(idProduct);
-  }else{
-    console.log("Il prodotto non è più disponibile");
-  }
+    } else {
+      console.log("Il prodotto non è più disponibile");
+    }
   };
-  
+
   const removeFromCart = (idProduct: Product["id"]) => {
     const newCart = cart.reduce((acc, el) => {
       if (el.id === idProduct) {
@@ -94,9 +93,9 @@ export function ContextProvider({ children }: Props) {
   const getProductQuantity = (idProduct: Product["id"]) => {
     setProducts(products => products!.map(product => {
       if (product.id === idProduct) {
-        if(router.pathname === "/"){
+        if (router.pathname === "/") {
           return { ...product, qty: product.qty - 1 };
-        }else if(router.pathname === "/cart"){
+        } else if (router.pathname === "/cart") {
           return { ...product, qty: product.qty + 1 };
         }
         return product;

@@ -10,7 +10,7 @@ export const ButtonAndTextareaContainer = styled.div({
     flexDirection: 'column',
     width: 'fitContent',
 });
-  
+
 export const Button = styled.button<{ disabled: boolean }>((props) => ({
     padding: '4px 20px',
     textAlign: 'center',
@@ -21,7 +21,7 @@ export const Button = styled.button<{ disabled: boolean }>((props) => ({
     color: props.disabled ? 'grey' : 'black',
     border: props.disabled ? '2px solid grey' : '2px solid black',
     pointerEvents: 'auto',
-  
+
     '&:hover': {
         ...(props.disabled ? {
             cursor: 'not-allowed',
@@ -31,9 +31,9 @@ export const Button = styled.button<{ disabled: boolean }>((props) => ({
         })
     }
 }));
-  
+
 export const StyledLinkButton = styled(Link)({
     textDecoration: 'none',
     color: 'black',
     pointerEvents: 'none'
-  });
+});

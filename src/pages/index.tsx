@@ -9,8 +9,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home(): JSX.Element {
 
-  const {products} = useContext(AppContext);
-  
+  const { products } = useContext(AppContext);
+
   return (
     <>
       <Grid>
@@ -24,5 +24,5 @@ export default function Home(): JSX.Element {
       </Grid>
     </>
   );
-  
+
 }

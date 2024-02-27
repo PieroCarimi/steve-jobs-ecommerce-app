@@ -12,7 +12,7 @@ const DivTotalPrice = styled.div({
 })
 
 export default function Cart() {
-  const {cart, calculateTotalPrice} = useContext(AppContext);
+  const { cart, calculateTotalPrice } = useContext(AppContext);
 
   return (
     <>
